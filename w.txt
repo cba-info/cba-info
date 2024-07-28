@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBA Fitness - Personal Training by Abbas Abbas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+        }
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        header p {
+            color: #666;
+        }
+        nav {
+            background-color: #c70039;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #ffd700;
+            color: black;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            background-color: white;
+            padding: 10px;
+            font-family: 'Georgia', serif;
+            flex: 1;
+        }
+        .hero img {
+            max-height: 450px;
+            margin-left: 20px;
+        }
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .section p, .section ul {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+        .contact-form, .bmr-form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .contact-form input, .contact-form textarea, .bmr-form input, .bmr-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .contact-form button, .bmr-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .contact-form button:hover, .bmr-form button:hover {
+            background-color: #45a049;
+        }
+        .bmr-description {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 18px;
+        }
+        .note {
+            color: red;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CBA Fitness</h1>
+        <p>Personal Training by Abbas Abbas</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="hero">
+        <h1>Transform Your Life</h1>
+        <img src="C:\Users\ABBAS\Downloads\asw.png" alt="Abbas Abbas">
+    </div>
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hi, I'm Abbas Abbas, a certified personal trainer based in Tyre - al Hosh - Abs Gym. I am passionate about helping people achieve their fitness goals through customized training programs and personalized support.</p>
+        </section>
+        <section id="services" class="section">
+            <h2>Services</h2>
+            <ul>
+                <li><a href="#" id="oneOnOneBtn">One-on-one Personal Training</a></li>
+                <li>Group Fitness Classes</li>
+                <li>Nutrition and Diet Planning</li>
+                <li>Online Coaching</li>
+            </ul>
+        </section>
+
+        <!-- The Modal -->
+        <div id="oneOnOneModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>One-on-one Personal Training</h2>
+                <p>Experience personalized training sessions tailored to your fitness goals. Our one-on-one training includes:</p>
+                <ul>
+                    <li>Customized workout plans</li>
+                    <li>Diet and nutrition guidance</li>
+                    <li>Progress tracking and adjustments</li>
+                    <li>Flexible scheduling</li>
+                </ul>
+                <p>Whether you're looking to lose weight, build muscle, or improve your overall fitness, our personal training program is designed to help you achieve your goals effectively.</p>
+            </div>
+        </div>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <form action="mailto:mrabbas519@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <p>Email: <a href="mailto:mrabbas519@gmail.com">info@cba.com</a></p>
+            <p>Phone: +2250706152979</p>
+            <p>Location: Tyre - al Hosh - Abs Gym</p>
+            <p>Instagram: <a href="https://www.instagram.com/abbashasnabbas">Follow me on Instagram</a></p>
+            <p>WhatsApp: <a href="https://wa.me/message/6O23QGBR4GDNI1">Chat with me on WhatsApp</a></p>
+        </section>
+        <section id="bmr" class="section">
+            <h2>Calculate Your BMR and TDEE</h2>
+            <div class="bmr-description">
+                <p>BMR (Basal Metabolic Rate) is the number of calories your body needs to perform basic life-sustaining functions.</p>
+                <p>TDEE (Total Daily Energy Expenditure) is the number of calories you need to maintain your current weight, based on your activity level.</p>
+            </div>
+            <div class="bmr-form">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" name="weight" required>
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" name="height" required>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="activity">Activity Level</label>
+                <select id="activity" name="activity" required>
+                    <option value="">Select Activity Level</option>
+                    <option value="sedentary">Sedentary (little or no exercise)</option>
+                    <option value="light">Lightly active (light exercise/sports 1-3 days/week)</option>
+                    <option value="moderate">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+                    <option value="active">Active (hard exercise/sports 6-7 days a week)</option>
+                    <option value="very active">Very active (very hard exercise/sports & physical job or 2x training)</option>
+                </select>
+                <button type="button" onclick="calculateBMR()">Calculate BMR & TDEE</button>
+                <p id="bmr-result"></p>
+                <p id="tdee-result"></p>
+                <p id="fat-loss" class="note"></p>
+                <p id="muscle-gain" class="note"></p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 CBA Fitness. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/abbashasnabbas">Instagram</a>
+            <a href="https://wa.me/message/6O23QGBR4GDNI1">WhatsApp</a>
+        </div>
+    </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("oneOnOneModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("oneOnOneBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function calculateBMR() {
+            var weight = parseFloat(document.getElementById('weight').value);
+            var height = parseFloat(document.getElementById('height').value);
+            var age = parseInt(document.getElementById('age').value);
+            var gender = document.getElementById('gender').value;
+            var activity = document.getElementById('activity').value;
+
+            var bmr;
+
+            if (gender === 'male') {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else if (gender === 'female') {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            } else {
+                bmr = 'Invalid gender selection';
+            }
+
+            var tdee;
+            switch(activity) {
+                case 'sedentary':
+                    tdee = bmr * 1.2;
+                    break;
+                case 'light':
+                    tdee = bmr * 1.375;
+                    break;
+                case 'moderate':
+                    tdee = bmr * 1.55;
+                    break;
+                case 'active':
+                    tdee = bmr * 1.725;
+                    break;
+                case 'very active':
+                    tdee = bmr * 1.9;
+                    break;
+                default:
+                    tdee = 'Invalid activity selection';
+            }
+
+            document.getElementById('bmr-result').innerText = 'Your BMR is: ' + bmr.toFixed(2);
+            document.getElementById('tdee-result').innerText = 'Your TDEE is: ' + tdee.toFixed(2);
+
+            document.getElementById('fat-loss').innerText = "For fat loss, consume 500 calories less than your TDEE.";
+            document.getElementById('muscle-gain').innerText = "For muscle gain, consume 500 calories more than your TDEE.";
+        }
+    </script>
+</body>
+</html>
